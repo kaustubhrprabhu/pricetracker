@@ -1,0 +1,25 @@
+main div.tab-buttons {
+    margin: 0 1.75rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* gap: 0.5rem; */
+}
+
+main div.tab-buttons button {
+    font-weight: 700;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-bottom: 0.125rem solid var(--color-background);
+    color: var(--color-primary);
+    background: none;
+    cursor: pointer;
+}
+
+main div.tab-buttons button:hover {
+    border-bottom: 0.125rem solid var(--color-primary);
+}
+
+main div.admin-content {
+    padding: 0 1.75rem 1.75rem;
+}

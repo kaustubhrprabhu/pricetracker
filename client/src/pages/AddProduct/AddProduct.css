@@ -1,0 +1,42 @@
+div.addproduct-content {
+    max-width: 24.75rem;
+    margin: 3.125rem auto 0;
+    padding: 1.75rem;
+}
+
+div.form-container form label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--secondary-font);
+}
+
+div.form-container form input,
+div.form-container form button {
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    border: 0.0625rem solid var(--color-primary);
+    border-radius: 0.25rem;
+}
+
+div.form-container form button {
+    font-weight: 700;
+    margin-top: 0.5rem;
+    background: var(--color-primary);
+    color: var(--color-background);
+    cursor: pointer;
+    transition: 0.2s opacity;
+}
+
+div.form-container form button:hover {
+    opacity: 85%;
+}
+
+div.form-container div.errorbox {
+    padding: 0.5rem;
+    color: rgb(255, 0, 0);
+    background: rgba(255, 0, 0, 0.15);
+    border: 0.0625rem solid rgb(255, 0, 0);
+    border-radius: 0.25rem;
+}

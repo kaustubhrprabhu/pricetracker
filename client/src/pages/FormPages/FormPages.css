@@ -1,0 +1,6 @@
+main div.login-container,
+main div.signup-container {
+    max-width: 24.75rem;
+    margin: 3.125rem auto 0;
+    padding: 1.75rem;
+}

@@ -1,0 +1,109 @@
+div.adtb-container div.info {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+div.adtb-container div.info div {
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: rgb(240, 240, 240);
+}
+
+div.adtb-container div.info div span.count {
+    font-size: 1.375rem;
+    font-weight: 500;
+}
+
+div.adtb-container table {
+    font-size: 0.75rem;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+div.adtb-container table td img {
+    width: 3rem;
+}
+
+div.adtb-container table td a {
+    color: var(--primary-font);
+}
+
+div.adtb-container table td a:hover {
+    color: var(--color-primary);
+}
+
+div.adtb-container table td button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: 0.125rem solid rgb(255, 0, 0);
+    border-radius: 0.25rem;
+    color: rgb(255, 0, 0);
+    background: var(--color-background);
+    cursor: pointer;
+}
+
+div.adtb-container table th {
+    background: rgb(205, 205, 205);
+}
+
+div.adtb-container table th,
+div.adtb-container table td {
+    text-align: left;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+    div.adtb-container table th {
+        display: none;
+    }
+
+    div.adtb-container table tr {
+        border-bottom: 0.0625rem solid var(--disabled-font);
+    }
+
+    div.adtb-container table td {
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 0.0625rem;
+        flex-wrap: wrap;
+    }
+
+    div.adtb-container table td:first-child {
+        padding-top: 1rem;
+    }
+
+    div.adtb-container table td:last-child {
+        padding-bottom: 1rem;
+    }
+
+    div.adtb-container table td::before {
+        font-weight: 700;
+        color: var(--secondary-font);
+    }
+
+    div.adtb-container table td:nth-child(1)::before {
+        content: attr(data-cell);
+    }
+
+    div.adtb-container table td:nth-child(2)::before {
+        content: attr(data-cell);
+    }
+
+    div.adtb-container table td:nth-child(3)::before {
+        content: attr(data-cell);
+    }
+
+    div.adtb-container table td:nth-child(4)::before {
+        content: attr(data-cell);
+    }
+}
