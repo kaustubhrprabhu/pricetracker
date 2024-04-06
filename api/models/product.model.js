@@ -34,9 +34,4 @@ const productSchema = new mongoose.Schema({
 
 const Product = mongoose.model('Product', productSchema);
 
-const getAllProducts = async () => {
-    const products = await Product.find({});
-    return products;
-}
-
-module.exports = { Product, getAllProducts }
+module.exports = { Product }

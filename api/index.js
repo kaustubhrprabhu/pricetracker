@@ -8,9 +8,9 @@ const cors = require('cors');
 const userRoutes = require('./routes/user.route.js');
 const authRoutes = require('./routes/auth.route.js');
 const productRoutes = require('./routes/product.route.js');
-const { trackProduct } = require('./utils/tracker.js');
+const { trackerService } = require('./services/tracker.service.js');
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
 app.use(express.json());
@@ -39,13 +39,12 @@ app.use((err, req, res, next) => {
     });
 })
 
-// Cron job
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        cron.schedule('0 * * * *', trackProduct); // Every hour
+        cron.schedule('0 * * * *', trackerService); // Cron job to run every hour
         app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
     })
     .catch(err => {
-        console.log(err.message);
+        console.error(err.message);
     });

@@ -13,7 +13,7 @@ div.product-page div.image {
 }
 
 div.product-page div.image img {
-    width: 50%;
+    max-width: 50%;
 }
 
 div.product-page div.info {

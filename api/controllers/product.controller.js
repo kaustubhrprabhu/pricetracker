@@ -3,10 +3,11 @@ const { Product } = require('../models/product.model.js');
 const { getProductDetails } = require('../services/product.service.js');
 
 const add = async (req, res, next) => {
-    const { url } = req.body;
+    let { url } = req.body;
     if (!url) {
         return next(errorHandler(400, 'URL required'));
     }
+    url = url.split('?')[0];
 
     try {
         const details = await getProductDetails(url);
@@ -15,6 +16,7 @@ const add = async (req, res, next) => {
         }
         const newProduct = await Product({
             ...details,
+            oldprice: details.price,
             email: req.user.email,
         }).save();
         return res.status(201).json(newProduct);
@@ -60,7 +62,7 @@ const getAll = async (req, res, next) => {
 }
 
 const deleteProduct = async (req, res, next) => {
-    if (!req.user.isAdmin || req.user.id !== req.params.userid) {
+    if (!req.user.isAdmin && req.user.id !== req.params.userid) {
         return next(errorHandler(403, 'You are not allowed to delete this product'));
     }
 
